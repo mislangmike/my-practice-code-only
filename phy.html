@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video autoplay loop muted id="background-video">
+        <source src="scene1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="content">
+        <h1>Webpage Freestyle</h1>
+        <p>Explore the amazing 3d motion of 2d motion simulator for you ^^</p>
+    </div>
+        <div class="container">
+            <h1>Projectile Motion Calculator</h1>
+            <div class="flex-container">
+                <!-- Input Section -->
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="initialVelocity">Initial Velocity (u) in m/s:</label>
+                        <input type="number" id="initialVelocity" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="angle">Angle of Projection (θ) in degrees:</label>
+                        <input type="number" id="angle" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="initialHeight">Initial Height (h) in meters:</label>
+                        <input type="number" id="initialHeight" required>
+                     </div>
+                     <button id="calculateBtn">Calculate</button>
+                 </div>
+    
+                <!-- Equations Section -->
+                 <div class="equations-section" id="equationsSection">
+                    <h2>Equations Used:</h2>
+                    <p><strong>1. Time of Flight (T):</strong></p>
+                     <p>T = (u * sin(θ) + √((u * sin(θ))² + 2gh)) / g</p>
+                    <p><strong>2. Maximum Height (H):</strong></p>
+                    <p>H = h + (u² * sin²(θ)) / (2g)</p>
+                    <p><strong>3. Horizontal Range (R):</strong></p>
+                    <p>R = (u² * sin(2θ)) / g</p>
+                    <p><strong>4. Velocity at Time (v):</strong></p>
+                    <p>v = u * cos(θ) - gt</p>
+                </div>
+            </div>
+    
+        <!-- Results Section -->
+        <div class="results" id="results">
+            <h2>Results:</h2>
+            <p id="timeOfFlight"></p>
+            <p id="maxHeight"></p>
+            <p id="horizontalRange"></p>
+        </div>
+    
+        <!-- Velocity Section -->
+        <div class="velocity-section" id="velocitySection">
+            <h2>Velocity at Time:</h2>
+            <ul id="velocityList"></ul>
+        </div>
+    
+        <!-- Graph Section -->
+        <h2>Projectile Motion Graph</h2>
+        <canvas id="trajectoryGraph" width="800" height="400"></canvas>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
